@@ -1,0 +1,36 @@
+[package]
+name = "emotional-tagging"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+
+[lib]
+name = "emotional_tagging_lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "emotional-tagging"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.5", features = [ "shell-open"] }
+rusqlite = { version = "0.29", features = ["bundled", "chrono"] }
+chrono = { version = "0.4", features = ["serde"] }
+ndarray = "0.15"
+ndarray-stats = "0.5"
+rand = "0.8"
+log = "0.4"
+env_logger = "0.11"
+
+[features]
+default = [ "custom-protocol" ]
+custom-protocol = [ "tauri/custom-protocol" ]
+
+[profile.release]
+codegen-units = 1
+lto = true
