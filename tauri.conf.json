@@ -5,19 +5,17 @@
     "devPath": "http://localhost:5173",
     "frontendDist": "../dist"
   },
-  "app": {
-    "windows": [
-      {
-        "fullscreen": false,
-        "height": 900,
-        "resizable": true,
-        "title": "Emotional-Tagging",
-        "width": 1400
-      }
-    ],
-    "security": {
-      "csp": null
+  "windows": [
+    {
+      "fullscreen": false,
+      "height": 900,
+      "resizable": true,
+      "title": "Emotional-Tagging",
+      "width": 1400
     }
+  ],
+  "security": {
+    "csp": null
   },
   "package": {
     "productName": "Emotional-Tagging",
